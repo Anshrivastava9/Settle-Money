@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>Document</title>
+</head>
+<style>
+.home__mid{
+    align-items: center;
+    margin-top: 50%;
+    margin: 20%;
+    height: 200vh;
+}    
+</style>
+<body>
+    <div class="home__mid">
+    <div class="form-group">
+        <label for="usr"><strong>Total members Involved in transaction</strong></label>
+        <input type="text" class="form-control" id="usr">
+      </div>
+    <button type="button" class="btn btn-dark" onclick="clickme()">Click to Proceed</button>     
+</div>
+</body>
+<script>
+    function clickme() {
+        var x=document.getElementById("usr").value;
+        if(x == "" || isNaN(x)){
+            swal({
+        title: "Fill up the text field properly",
+        text: "Be careful next time",
+        icon: "warning",
+        });
+        }else{
+            sessionStorage.setItem("Tmembers", JSON.stringify(x));
+            window.location.replace("./home2.html");}
+        }
+</script>
+</html>

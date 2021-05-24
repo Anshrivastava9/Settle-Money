@@ -1,1 +1,2 @@
-# Settle-Money
+# CBFriendsCost
+CB Project
